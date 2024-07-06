@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #d8c3a5;
+    color: #25274d; /* Text color */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, button {
+    margin: 5px;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #000000;
+    text-align: left;
+}
+
+th {
+    background-color: #25274d;
+    color: white;
+}
+
+form button[type="submit"] {
+    background-color:#25274d;
+    color: white;
+    cursor: pointer;
+}
+

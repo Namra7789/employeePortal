@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Portal</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Employee Portal</h1>
+    <form action="/saveEmployee" method="post">
+        <input type="hidden" name="id">
+        <p>
+        <input type="text" name="empCode" placeholder="Emp Code" required>
+        <input type="text" name="empName" placeholder="Employee Name" required>
+        <input type="text" name="fatherName" placeholder="Father Name">
+        <input type="text" name="mobileNo" placeholder="Mobile No">
+        Date of Joining
+        <input type="date" name="dateOfJoining" placeholder="Date of Joining">
+        Date of Birth
+        <input type="date" name="dateOfBirth" placeholder="Date of Birth">
+        <input type="text" name="panNo" placeholder="Pan No">
+        <input type="text" name="aadharNo" placeholder="Aadhar No">
+        <input type="text" name="address" placeholder="Address">
+        <input type="email" name="officialMail" placeholder="Official Mail">
+        <input type="email" name="personalMail" placeholder="Personal Mail">
+        <button type="submit">Add Employee</button></p>
+    </form>
+    <h2>Employee List</h2>
+    <table>
+        <tr>
+            <th>Emp Code</th>
+            <th>Employee Name</th>
+            <th>Father Name</th>
+            <th>Mobile No</th>
+            <th>Date of Joining</th>
+            <th>Date of Birth</th>
+            <th>Pan No</th>
+            <th>Aadhar No</th>
+            <th>Address</th>
+            <th>Official Mail</th>
+            <th>Personal Mail</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.empCode}"></td>
+            <td th:text="${employee.empName}"></td>
+            <td th:text="${employee.fatherName}"></td>
+            <td th:text="${employee.mobileNo}"></td>
+            <td th:text="${employee.dateOfJoining}"></td>
+            <td th:text="${employee.dateOfBirth}"></td>
+            <td th:text="${employee.panNo}"></td>
+            <td th:text="${employee.aadharNo}"></td>
+            <td th:text="${employee.address}"></td>
+            <td th:text="${employee.officialMail}"></td>
+            <td th:text="${employee.personalMail}"></td>
+            <td>
+                <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}">Edit</a>
+                <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

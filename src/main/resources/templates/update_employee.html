@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Edit Employee</h1>
+    <form action="/saveEmployee" method="post">
+        <input type="hidden" name="id" th:value="${employee.id}">
+        <input type="text" name="empCode" th:value="${employee.empCode}" required>
+        <input type="text" name="empName" th:value="${employee.empName}" required>
+        <input type="text" name="fatherName" th:value="${employee.fatherName}">
+        <input type="text" name="mobileNo" th:value="${employee.mobileNo}">
+        <input type="date" name="dateOfJoining" th:value="${employee.dateOfJoining}">
+        <input type="date" name="dateOfBirth" th:value="${employee.dateOfBirth}">
+        <input type="text" name="panNo" th:value="${employee.panNo}">
+        <input type="text" name="aadharNo" th:value="${employee.aadharNo}">
+        <input type="text" name="address" th:value="${employee.address}">
+        <input type="email" name="officialMail" th:value="${employee.officialMail}">
+        <input type="email" name="personalMail" th:value="${employee.personalMail}">
+        <button type="submit">Update Employee</button>
+    </form>
+    <a href="/">Back to Client List</a>
+</body>
+</html>
