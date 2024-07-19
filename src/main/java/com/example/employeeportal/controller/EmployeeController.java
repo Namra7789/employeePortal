@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -52,5 +54,15 @@ public class EmployeeController {
         // call delete employee method
         service.deleteEmployee(id);
         return "redirect:/";
+    }
+
+    @GetMapping("/export/employees")
+    public void exportToExcel(HttpServletResponse response) throws IOException {
+        response.setContentType("application/octet-stream");
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=employees.xlsx";
+        response.setHeader(headerKey, headerValue);
+
+        service.exportToExcel(response);
     }
 }

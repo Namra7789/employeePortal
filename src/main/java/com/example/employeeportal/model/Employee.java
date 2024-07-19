@@ -19,6 +19,7 @@ public class Employee {
     private String address;
     private String officialMail;
     private String personalMail;
+    private String workStatus;
 
     // Getters and Setters
     public String getId() {
@@ -115,5 +116,13 @@ public class Employee {
 
     public void setPersonalMail(String personalMail) {
         this.personalMail = personalMail;
+    }
+
+    public String getWorkStatus() {
+        return workStatus;
+    }
+
+    public void setWorkStatus(String workStatus) {
+        this.workStatus = workStatus;
     }
 }

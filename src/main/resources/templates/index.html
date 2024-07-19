@@ -23,7 +23,11 @@
         <input type="text" name="address" placeholder="Address">
         <input type="email" name="officialMail" placeholder="Official Mail">
         <input type="email" name="personalMail" placeholder="Personal Mail">
-        <button type="submit">Add Employee</button></p>
+        <input type="text" name="workStatus" placeholder="Work Status">
+        <div class="button-container">
+            <button type="submit">Add Employee</button>
+            <a id="po-status" href="https://client-portal-x5pc.onrender.com/" target="_blank">PO Status</a>
+        </div>
     </form>
     <h2>Employee List</h2>
     <table>
@@ -39,6 +43,7 @@
             <th>Address</th>
             <th>Official Mail</th>
             <th>Personal Mail</th>
+            <th>Work Status</th>
             <th>Actions</th>
         </tr>
         <tr th:each="employee : ${employees}">
@@ -53,11 +58,13 @@
             <td th:text="${employee.address}"></td>
             <td th:text="${employee.officialMail}"></td>
             <td th:text="${employee.personalMail}"></td>
+            <td th:text="${employee.workStatus}"></td>
             <td>
                 <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}">Edit</a>
                 <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a>
             </td>
         </tr>
     </table>
+    
 </body>
 </html>
